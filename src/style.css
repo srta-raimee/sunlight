@@ -1,0 +1,80 @@
+:root {
+  --font-base: "Josefin Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --bg: #000000;
+  /* fonte do texto */
+  --fg: #ffffff;   
+  --link: #646cff;
+  --link-hover: #535bf2;
+  --nav-height: 3%;
+}
+
+html, body, #app { margin: 0; padding: 0; }
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-base);
+  line-height: 1.5;
+  color: var(--fg);
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* overlay escuro */
+    url('/src/assets/sunlight1.jpg');                          /* caminho da imagem */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* opcional: efeito "parallax" */
+}
+
+#app {
+  text-align: unset;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+main {
+  margin-top: var(--nav-height);
+}
+
+a {
+  font-weight: 500;
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--link);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+@media (prefers-color-scheme: light) {
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
