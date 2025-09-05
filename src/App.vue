@@ -2,9 +2,9 @@
 import NavBar, { type MenuItem } from './components/NavBar.vue'
 
 const items: MenuItem[] = [
-  { label: 'Home', to: '/' },
+  { label: 'Home', to: '/sunlight' },
   { label: 'What time is it?', to: '/wtii' },
-  { label: 'BUNDA (externo)', href: 'https://example.com' },
+  { label: 'SOL', href: 'https://example.com' },
 ]
 </script>
 

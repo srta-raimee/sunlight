@@ -1,2 +1,2 @@
-<template><h2>bundaaaaaaaaaa</h2></template>
+<template><h2>SUN</h2></template>
 <script lang="ts" setup></script>
