@@ -1,0 +1,1 @@
+import{_ as e,c,o as s}from"./index-CcXnp37x.js";const o="/sunlight/assets/welcome-euNXIzGR.png",t={},n={class:"welcome-img",src:o,alt:"Bevindo"};function _(a,r){return s(),c("img",n)}const i=e(t,[["render",_],["__scopeId","data-v-ec12c457"]]);export{i as default};
