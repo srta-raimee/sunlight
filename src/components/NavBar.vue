@@ -5,9 +5,9 @@
     </div>
     <nav class="menu">
       <RouterLink to="/sunlight">Home</RouterLink>
-      <RouterLink to="/pics">Pics</RouterLink>
-      <RouterLink to="/wtii">Time</RouterLink>
-      <RouterLink to="/tales">Tales</RouterLink>
+      <RouterLink to="/sunlight/pics">Pics</RouterLink>
+      <RouterLink to="/sunlight/wtii">Time</RouterLink>
+      <RouterLink to="/sunlight/tales">Tales</RouterLink>
     </nav>
   </header>
 </template>
