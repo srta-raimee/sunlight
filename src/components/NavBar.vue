@@ -1,14 +1,15 @@
 <template>
   <header class="navbar">
     <div class="bar">
-      <div class="logo">
+      <!-- <div class="logo">
         <img src="../assets/sunlight-logo3.svg" alt="Sunlight logo" />
-      </div>
+      </div> -->
       <nav class="menu">
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/pics">Pics</RouterLink>
-        <RouterLink to="/wtii">Time</RouterLink>
+        <RouterLink to="/pics">Galeria</RouterLink>
         <RouterLink to="/tales">Tales</RouterLink>
+        <RouterLink to="/joji">Mistério</RouterLink>
+
       </nav>
     </div>
   </header>
@@ -38,19 +39,20 @@
   backdrop-filter: blur(2px);
 }
 
-.logo {
-  position: absolute;
+
+/* .logo {
+  position: fixed; 
   left: 4%;
   top: 60%;
   transform: translateY(-50%);
-  z-index: 2;
-}
-.logo img {
+  z-index: 2;}*/
+
+/* .logo img {
   width: 72%;
   height: auto;
   filter: sepia(5) saturate(60) hue-rotate(12deg) brightness(1.1);
   display: block;
-}
+} */
 
 .menu {
   display: flex;
@@ -61,12 +63,16 @@
 
 .menu a {
   text-decoration: none;
-  color: #ffd445;
+  color: #ffffff;
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 350;
   transition: color .2s ease, opacity .2s ease;
 }
 .menu a:hover {
-  color: #ffc107a8;
+  color: #fcbd00;
 }
 </style>
+<script>
+
+</script>
+

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import NavBar from './components/NavBar.vue'
+import FooterPe from './components/FooterPe.vue'
 
 type MenuItem = {
   label: string
@@ -9,7 +10,7 @@ type MenuItem = {
 
 const items: MenuItem[] = [
   { label: 'Home', to: '/' },
-  { label: 'What time is it?', to: '/wtii' },
+  { label: 'Joji', to: '/joji' },
   { label: 'Pics', to: '/pics' },
   { label: 'Tales', to: '/tales' },
   
@@ -23,6 +24,7 @@ const items: MenuItem[] = [
     <RouterView />
   </main>
 
+  <FooterPe company="Sunlight"/>
 
 </template>
 

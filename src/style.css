@@ -69,7 +69,58 @@ button:focus-visible {
 .card {
   padding: 2em;
 }
+.bloco-esquerda{
+  box-sizing: border-box;
+  width: clamp(280px, 48%, 600px); /* responsive width between min and max */
+  max-width: 100%;
+  padding: 0.5% 1%;
+  margin: 0 auto 0 0; /* keep block aligned to the left on wide screens */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: rgba(0, 0, 0, 0.308);
+  border-radius: 10px;
+  overflow: visible;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.653), 0 2px 6px rgba(0, 0, 0, 0.167);
 
+}
+
+/* Medium screens */
+@media (max-width: 900px) {
+  .bloco-esquerda {
+    width: 60%;
+    padding: 1rem;
+  }
+}
+
+/* Small screens: full width and centered with comfortable padding */
+@media (max-width: 600px) {
+  .bloco-esquerda {
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+  }
+}
+.bloco-esquerda { position: relative; }
+#ladin{
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  
+  font-size: 1.2em;
+  text-align: right;
+  color: #e0d4c3;
+
+}
+
+#horas{
+  padding: 3%;
+}
 @media (prefers-color-scheme: light) {
   a:hover {
     color: #747bff;
@@ -77,4 +128,82 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+button{
+  background: rgba(52, 31, 18, 0.197);
+  color: white
+}
+
+#butao-horas{
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  margin-top: 0.5em;
+  font-size: 1em;
+  font-weight: normal; 
+  background: rgba(26, 15, 9, 0.481);
+  color: rgba(255, 255, 255, 0.733);
+  /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.012), 0 2px 6px rgba(0, 0, 0, 0.678); */
+}
+
+.ladin-caixa{
+  position: relative;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.bloco-direito{
+  box-sizing: border-box;
+  width: clamp(280px, 48%, 600px);
+  max-width: 100%;
+  padding: 0.5% 1%;
+  margin: 0 0 0 auto; /* keep block aligned to the right on wide screens */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align content to the left */
+  justify-content: flex-start;
+  background: rgba(0, 0, 0, 0.308);
+  border-radius: 10px;
+  overflow: visible;
+  backdrop-filter: blur(2px);
+  position: relative;
+  text-align: left; /* change to left align text */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.653), 0 2px 6px rgba(0, 0, 0, 0.167);
+
+}
+
+/* Medium screens */
+@media (max-width: 900px) {
+  .bloco-direito {
+    width: 60%;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+/* Small screens: full width and centered with comfortable padding */
+@media (max-width: 600px) {
+  .bloco-direito {
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    align-items: flex-start; /* switch to left-aligned flow on narrow screens */
+    text-align: left;
+  }
+}
+
+.yt-frame{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.playlist-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
 }

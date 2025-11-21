@@ -1,17 +1,149 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
 
 <!-- <h2>Home</h2> -->
 
 <img class="welcome-img" src="../assets/welcome.png" alt="Bevindo" />
 
-<!-- <p>"𝘗𝘰𝘳𝘲𝘶𝘦, 𝘢𝘧𝘪𝘯𝘢𝘭, 𝘵𝘶𝘥𝘰 𝘢𝘲𝘶𝘪𝘭𝘰 𝘰 𝘭𝘦𝘮𝘣𝘳𝘢𝘷𝘢 𝘥𝘦 𝘶𝘮𝘢 𝘷𝘦𝘳𝘥𝘢𝘥𝘦 𝘪𝘯𝘵𝘳𝘪́𝘯𝘴𝘦𝘤𝘢 𝘢 𝘴𝘪: 𝘌𝘭𝘦 𝘵𝘪𝘯𝘩𝘢 𝘶𝘮𝘢 𝘢𝘭𝘮𝘢 𝘦𝘹𝘤𝘦̂𝘯𝘵𝘳𝘪𝘤𝘢, 𝘧𝘦𝘪𝘵𝘢 𝘥𝘦 𝘤𝘰𝘳𝘢𝘨𝘦𝘮. 𝘌, 𝘮𝘦𝘴𝘮𝘰 𝘲𝘶𝘢𝘯𝘥𝘰 𝘢𝘲𝘶𝘦𝘭𝘦 𝘮𝘰𝘮𝘦𝘯𝘵𝘰 𝘴𝘦 𝘵𝘰𝘳𝘯𝘢𝘴𝘴𝘦 𝘦𝘮 𝘮𝘦𝘮𝘰́𝘳𝘪𝘢 — 𝘮𝘦𝘴𝘮𝘰 𝘲𝘶𝘢𝘯𝘥𝘰 𝘰 𝘴𝘰𝘭 𝘴𝘦 𝘱𝘶𝘴𝘦𝘴𝘴𝘦 —, 𝘦𝘭𝘦 𝘴𝘢𝘣𝘪𝘢: 𝘴𝘦𝘶 𝘤𝘰𝘳𝘢𝘤̧𝘢̃𝘰 𝘤𝘰𝘯𝘵𝘪𝘯𝘶𝘢𝘳𝘪𝘢 𝘱𝘶𝘭𝘴𝘢𝘯𝘵𝘦, 𝘷𝘪𝘷𝘦𝘯𝘥𝘰 𝘶𝘮 𝘥𝘪𝘢 𝘱𝘰𝘳 𝘷𝘦𝘻, 𝘥𝘦𝘴𝘷𝘦𝘯𝘥𝘢𝘯𝘥𝘰 𝘢 𝘪𝘯𝘧𝘪𝘯𝘪𝘵𝘶𝘥𝘦 𝘥𝘦 𝘴𝘦𝘶 𝘱𝘳𝘰́𝘱𝘳𝘪𝘰 𝘮𝘶𝘯𝘥𝘰 𝘦𝘮 𝘤𝘢𝘥𝘢 𝘴𝘪𝘯𝘨𝘦𝘭𝘰 𝘮𝘰𝘮𝘦𝘯𝘵𝘰."</p> -->
+<div class="bloco-esquerda" id="horas">
+  <h2>Faltam</h2>
+  <h1>{{ countdown }}</h1> 
 
+  <div class="ladin-caixa">
+    <h2 id="ladin">para o grande momento :)</h2>
+    <!-- <br>
+    <button id="butao-horas" type="button" @click="updateCountdown()" class="btn">Atualizar</button> -->
+  </div>
+</div>
+
+<div class="bloco-direito" id="mensagem">
+  <h2>Que horas são?</h2>
+  <h1>🇧🇷 Brasil: {{ brazilTime }}</h1>
+  <h1>🇵🇹 Portugal: {{ portugalTime }}</h1>
+</div>
+
+<div class="bloco-esquerda">
+  <h2>Playlist Sunlight</h2>
+   <div class="playlist-container">
+      <iframe
+      class="yt-frame"
+      src="https://www.youtube-nocookie.com/embed/videoseries?list=PLm_PShu5fJfsF-mbGRIQtQHGk_BiH1EwE"
+      title="Playlist"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
 </template>
+
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// ---------- COUNTDOWN ----------
+const targetDate = new Date('2026-01-28T11:00:00-03:00')
+const countdown = ref('')
+
+function updateCountdown() {
+  const now = new Date()
+  const diff = targetDate.getTime() - now.getTime()
+
+  if (diff <= 0) {
+    countdown.value = "EBA, CHEGOU!!!!!!"
+    return
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
+  const minutes = Math.floor((diff / (1000 * 60)) % 60)
+
+  countdown.value = `${days} dias • ${hours} horas • ${minutes} minutos`
+}
+
+// ---------- CLOCKS ----------
+const brazilTime = ref('')
+const portugalTime = ref('')
+
+function updateClocks() {
+  const now = new Date()
+
+  brazilTime.value = now.toLocaleTimeString('pt-BR', {
+    timeZone: 'America/Sao_Paulo',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  })
+
+  portugalTime.value = now.toLocaleTimeString('pt-PT', {
+    timeZone: 'Europe/Lisbon',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  })
+}
+
+// ---------- IMAGE POP ----------
+function pop() {
+  const img = document.querySelector('.welcome-img')
+  if (img) {
+    img.classList.remove('pop')
+    void img.offsetWidth
+    img.classList.add('pop')
+  }
+}
+
+function onScroll() {
+  const img = document.querySelector('.welcome-img')
+  if (!img) return
+
+  const rect = img.getBoundingClientRect()
+  const inView = rect.top < window.innerHeight && rect.bottom > 0
+
+  if (inView) pop()
+}
+
+// ---------- BLOCK OBSERVER ----------
+function setupBlocoObserver() {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("pop")
+        } else {
+          entry.target.classList.remove("pop")
+        }
+      })
+    },
+    { threshold: 0.2 }
+  )
+
+  document.querySelectorAll(".bloco-esquerda, .bloco-direito")
+    .forEach(bloco => observer.observe(bloco))
+}
+
+// ---------- TIMERS ----------
+let countdownInterval: number
+let clockInterval: number
+
+onMounted(() => {
+  updateCountdown()
+  countdownInterval = window.setInterval(updateCountdown, 1000 * 60 * 60)
+
+  updateClocks()
+  clockInterval = window.setInterval(updateClocks, 1000)
+
+  pop()
+  window.addEventListener("scroll", onScroll)
+
+  setupBlocoObserver()
+})
+
+onUnmounted(() => {
+  clearInterval(countdownInterval)
+  clearInterval(clockInterval)
+  window.removeEventListener("scroll", onScroll)
+})
+</script>
 
 <style scoped>
 
@@ -19,11 +151,33 @@
   position: relative;
   top: 80%;
   filter: sepia(5) saturate(15) hue-rotate(8deg) brightness(1.1);
-  height: 500px;
+  height: 50%;
   display: block;
   margin: 0 auto;
+  
 
+  /* animação */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  transform: scale(0.7);
 }
+
+.welcome-img.pop {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+.bloco-esquerda,
+.bloco-direito {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.bloco-esquerda.pop,
+.bloco-direito.pop {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
 </style>
-
-
