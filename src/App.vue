@@ -1,18 +1,29 @@
 <script lang="ts" setup>
-import NavBar, { type MenuItem } from './components/NavBar.vue'
+import NavBar from './components/NavBar.vue'
+
+type MenuItem = {
+  label: string
+  to?: string
+  href?: string
+}
 
 const items: MenuItem[] = [
-  { label: 'Home', to: '/sunlight' },
+  { label: 'Home', to: '/' },
   { label: 'What time is it?', to: '/wtii' },
-  { label: 'SOL', href: 'https://example.com' },
+  { label: 'Pics', to: '/pics' },
+  { label: 'Tales', to: '/tales' },
+  
 ]
 </script>
 
 <template>
   <NavBar brand="Sunlight" :items="items" />
+
   <main class="page">
     <RouterView />
   </main>
+
+
 </template>
 
 <style scoped>
