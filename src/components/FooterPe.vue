@@ -10,7 +10,7 @@
                 <a class="footer__link" href="/">Home</a>
                 <a class="footer__link" href="/pics">Pics</a>
                 <a class="footer__link" href="/tales">Tales</a>
-                <a class="footer__link" href="/joji">Joji</a>
+                <a class="footer__link" href="/joji">Mistério</a>
       
             </nav>
 

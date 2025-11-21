@@ -76,7 +76,10 @@ export default {
   <div class="joji-page">
     <!-- <h1>↑ ↑  ↓  ↓ ← → ← → B A </h1> -->
      <h1>Easter Egg</h1>
-     <h3>Em algum lugar por esse site pode ter uma surpresinha... Você consegue encontrar?</h3>
+     <div style="margin-top:0;">
+     <h3>Em algum lugar desse site pode ter uma surpresinha... Você consegue encontrar?</h3>
+     <p>Volte aqui quando tiver a resposta.</p>
+     </div>
     
   </div>
 </template>
