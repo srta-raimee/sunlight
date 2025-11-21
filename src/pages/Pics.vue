@@ -151,8 +151,9 @@ function next3() { scrollTrack(track3.value, 1) }
 </script>
 
 <template>
+    <h1 style="margin-top: 10%; text-align: center;">Galeria</h1>
     <div class="galery-bloco">
-        <h2>Galeria</h2>
+        <!-- <h2>Galeria</h2> -->
 
         <div class="carousel">
             <h3>Primeiras Duas Semanas...</h3>

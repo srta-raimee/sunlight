@@ -5,7 +5,8 @@ import Card from '../components/Card.vue'
 </script>
 
 <template>
-<h2>Sunset Tales</h2>
+<h1 style="margin-top: 10%; text-align: center;">Tales</h1>
+
 
 <section class="cards">
   <Card

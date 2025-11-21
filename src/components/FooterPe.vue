@@ -6,13 +6,13 @@
                 <span class="footer__company">{{ company }}</span>
             </div>
 
-            <nav class="footer__nav" aria-label="Footer navigation">
+            <!-- <nav class="footer__nav" aria-label="Footer navigation">
                 <a class="footer__link" href="/">Home</a>
                 <a class="footer__link" href="/pics">Pics</a>
                 <a class="footer__link" href="/tales">Tales</a>
                 <a class="footer__link" href="/joji">Mistério</a>
       
-            </nav>
+            </nav> -->
 
             <div class="footer__social" aria-label="Social links">
                 <a class="icon" href="https://github.com/srta-raimee" target="_blank" rel="noopener" aria-label="GitHub">
